@@ -1,0 +1,29 @@
+/* Style for the typewriter effect */
+.typewriter {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5em;
+    white-space: pre-line; /* Preserve natural line breaks */
+    overflow: hidden;
+    display: block;
+    width: 0;
+    border-right: 0.15em solid black; /* Simulates the cursor */
+    animation: typing 10s steps(100) 1s forwards, blink 0.75s step-end infinite;
+  }
+  
+  /* Animation for typing effect */
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  /* Animation for cursor blinking */
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
