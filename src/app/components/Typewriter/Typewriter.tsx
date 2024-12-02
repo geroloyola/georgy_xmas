@@ -8,22 +8,23 @@ interface TypewriterProps {
 
 export const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 100 }) => {
   const [displayedText, setDisplayedText] = useState('');
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    let index = 0;
+    setDisplayedText('');
+    setIndex(0);
+  }, [text]);
 
-    const interval = setInterval(() => {
-      setDisplayedText((prev) => prev + text.charAt(index)); // Append the correct character
-      index += 1;
+  useEffect(() => {
+    if (index < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText((prev) => prev + text.charAt(index));
+        setIndex((prevIndex) => prevIndex + 1);
+      }, speed);
 
-      if (index === text.length) {
-        clearInterval(interval); // Clear interval when done
-      } else {
-      }
-    }, speed);
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [text, speed]);
+      return () => clearTimeout(timer);
+    }
+  }, [index, text, speed]);
 
   return <p>{displayedText}</p>;
 };
