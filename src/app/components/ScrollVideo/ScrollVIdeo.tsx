@@ -19,7 +19,6 @@ export const ScrollVideo: React.FC<ScrollVideoProps> = ({
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [backgroundOpacity, setBackgroundOpacity] = useState(0);
   const [isScrollComplete, setIsScrollComplete] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -110,7 +109,6 @@ export const ScrollVideo: React.FC<ScrollVideoProps> = ({
 
       // Update state
       setCurrentImageIndex(smoothFrameIndex);
-      setBackgroundOpacity(opacity);
     });
   }, [images, currentImageIndex]);
 

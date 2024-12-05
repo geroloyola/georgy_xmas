@@ -1,6 +1,4 @@
-import { Card } from "./components/Card/Card";
 import { ScrollVideo } from "./components/ScrollVideo/ScrollVIdeo";
-import { Typewriter } from "./components/Typewriter/Typewriter";
 
 export default function Home() {
   return (
