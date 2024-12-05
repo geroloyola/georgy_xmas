@@ -159,12 +159,12 @@ export const ScrollVideo: React.FC<ScrollVideoProps> = ({
         transform: 'translate(-50%, -50%)',
         textAlign: 'center'
       }}>
-        <div>Loading images: {loadingProgress}%</div>
+        <div>Cargando</div>
         <div 
           style={{
             width: `${loadingProgress}%`,
             height: '4px',
-            backgroundColor: 'blue',
+            backgroundColor: '#fffff0',
             transition: 'width 0.3s ease'
           }}
         />
