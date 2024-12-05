@@ -6,6 +6,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 interface BlurredDialogProps {
   trigger: React.ReactNode;
@@ -23,7 +24,10 @@ export function BlurredDialog({ trigger, children }: BlurredDialogProps) {
       {isOpen && (
         <div className="fixed inset-0 z-50 backdrop-blur-md" aria-hidden="true" />
       )}
-      <DialogContent className="sm:max-w-[425px] z-50 bg-background/70 backdrop-blur-md">
+      <DialogContent className="md:w-[80vw] lg:w-[60vw] max-w-[80vw] z-50 backdrop-blur-md">
+        <DialogTitle hidden>
+          Georgy
+        </DialogTitle>
         {children}
       </DialogContent>
     </Dialog>

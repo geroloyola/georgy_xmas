@@ -26,5 +26,15 @@ export const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 100 }) => 
     }
   }, [index, text, speed]);
 
-  return <p>{displayedText}</p>;
+  // Split the text and use {'\n'} for line breaks
+  return (
+    <div>
+      {displayedText.split('\n').map((line, i) => (
+        <React.Fragment key={i}>
+          <p>{line}</p>
+          {i < displayedText.split('\n').length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </div>
+  );
 };

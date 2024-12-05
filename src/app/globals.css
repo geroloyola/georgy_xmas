@@ -5,12 +5,38 @@
 body {
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
-  background-color: #fffff0;
+  background-color: #000;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
+
+
+
+@media print {
+@page {
+  size: landscape;
+}
+
+.grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+
+.ivory-print {
+  background-color: white;
+}
+}
+
+body {
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+
+
 
 @layer base {
   :root {
