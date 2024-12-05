@@ -102,12 +102,6 @@ export const ScrollVideo: React.FC<ScrollVideoProps> = ({
         currentImageIndex + (targetFrameIndex - currentImageIndex) * 0.2
       );
 
-      // Calculate background opacity with smoother transition
-      const opacity = Math.min(1, Math.max(0, 
-        (clampedScrollProgress - 0.2) / 0.6
-      ));
-
-      // Update state
       setCurrentImageIndex(smoothFrameIndex);
     });
   }, [images, currentImageIndex]);
